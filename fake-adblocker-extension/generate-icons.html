@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Generate Chrome Extension Icons</title>
+</head>
+<body>
+  <h3>Generated Icons for Free Ad Blocker (Demo)</h3>
+  <p>Right-click each canvas and select "Save image as..." to save as PNG.</p>
+  <h4>icon48.png (48x48)</h4>
+  <canvas id="canvas48" width="48" height="48"></canvas>
+  <h4>icon128.png (128x128)</h4>
+  <canvas id="canvas128" width="128" height="128"></canvas>
+
+  <script>
+    function drawIcon(canvasId, size) {
+      const canvas = document.getElementById(canvasId);
+      const ctx = canvas.getContext('2d');
+
+      // Clear canvas
+      ctx.clearRect(0, 0, size, size);
+
+      // Draw red shield (simplified as a rounded rectangle)
+      ctx.fillStyle = '#ff0000';
+      ctx.beginPath();
+      ctx.moveTo(10, 10);
+      ctx.lineTo(size - 10, 10);
+      ctx.quadraticCurveTo(size, 10, size, 20);
+      ctx.lineTo(size, size - 20);
+      ctx.quadraticCurveTo(size, size - 10, size - 10, size - 10);
+      ctx.lineTo(size / 2, size - 5);
+      ctx.lineTo(10, size - 10);
+      ctx.quadraticCurveTo(0, size - 10, 0, size - 20);
+      ctx.lineTo(0, 20);
+      ctx.quadraticCurveTo(0, 10, 10, 10);
+      ctx.closePath();
+      ctx.fill();
+
+      // Draw white "X"
+      ctx.strokeStyle = '#ffffff';
+      ctx.lineWidth = size / 10;
+      ctx.beginPath();
+      ctx.moveTo(size / 4, size / 4);
+      ctx.lineTo(size * 3 / 4, size * 3 / 4);
+      ctx.moveTo(size * 3 / 4, size / 4);
+      ctx.lineTo(size / 4, size * 3 / 4);
+      ctx.stroke();
+    }
+
+    // Draw both icons
+    drawIcon('canvas48', 48);
+    drawIcon('canvas128', 128);
+  </script>
+</body>
+</html>

