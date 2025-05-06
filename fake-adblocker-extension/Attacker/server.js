@@ -49,6 +49,6 @@ const server = https.createServer(options, (req, res) => {
   }
 });
 
-server.listen(8999, '192.168.153.136', () => {
-  console.log('HTTPS Server running at https://192.168.153.136:8999/');
+server.listen(8999, '$IP', () => {
+  console.log('HTTPS Server running at https://$IP:8999/');
 });
