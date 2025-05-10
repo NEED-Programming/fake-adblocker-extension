@@ -1,3 +1,3 @@
 # fake-adblocker-extension
 
-Change $IP value to C2 server to collect information
+Change the $IP value in each file to your attacker server to collect information
